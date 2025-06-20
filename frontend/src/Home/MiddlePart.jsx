@@ -35,19 +35,42 @@ const MiddlePart = () => {
             zIndex: -1,
           }}
         />
-        <div
-          style={{
-            position: 'relative',
-            zIndex: 1,
-            paddingTop: '80px', // offset for header
-            textAlign: 'center',
-            color: 'white',
-          }}
-        >
-          <h1 style={{ fontSize: '3rem', fontWeight: 'bold' }}>
-            YOU GOTTA KEEP FIGHTIN’
-          </h1>
-        </div>
+       <motion.div
+  initial={{ opacity: 0, y: -50 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 1 }}
+  style={{
+    position: 'relative',
+    zIndex: 1,
+    paddingTop: '80px',
+     textAlign: 'right',
+    color: 'white',
+    paddingRight: '60px',
+  }}
+>
+  <motion.h1
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, delay: 0.3 }}
+    style={{ fontSize: '3.5rem',
+    fontWeight: 800, // Bolder
+    textTransform: 'uppercase', // Makes it all caps
+    letterSpacing: '1px',
+    marginBottom: '1rem', }}
+  >
+    PUSH UP YOUR LIMITS
+  </motion.h1>
+
+  <motion.h1
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 1.2, delay: 0.3 }}
+    style={{ fontSize: '1rem', fontWeight: 'bold' }}
+  >
+   Whether you're staying on track or chasing a new goal, we're here to fuel your serious progress.
+  </motion.h1>
+</motion.div>
+        
       </div>
 
       {/* Animated Boxes Section */}
@@ -72,9 +95,9 @@ const MiddlePart = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={boxVariants}
             style={{
-              width: '45%',
+              width: '35%',
               minWidth: '280px',
-              height: '150px',
+              height: '350px',
                background: 'linear-gradient(-45deg, #ff9a9e, #fad0c4, #fbc2eb, #a6c1ee)',
     backgroundSize: '400% 400%',
     animation: 'gradientShift 8s ease infinite',
