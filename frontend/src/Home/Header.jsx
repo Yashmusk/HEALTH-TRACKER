@@ -5,14 +5,16 @@ import {
 } from '@mui/material';
 import MenuIcon from '@mui/icons-material/Menu';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 
 const MotionButton = motion(Button);
 const pages = ['PRODUCTS', 'PRICING', 'BLOG'];
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
+// const settings = [];
 
-function Header() {
+function Header({onAvatarClick}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [anchorElUser, setAnchorElUser] = useState(null);
+    const navigate = useNavigate();
 
   return (
     <AppBar
@@ -78,8 +80,8 @@ function Header() {
         </Box>
 
         {/* Avatar */}
-        <Tooltip title="Open settings">
-          <IconButton onClick={(e) => setAnchorElUser(e.currentTarget)} sx={{ p: 0 }}>
+        <Tooltip title="Login">
+           <IconButton onClick={onAvatarClick} sx={{ p: 0 }}>
             <Avatar alt="User" src="https://i.pravatar.cc/300" />
           </IconButton>
         </Tooltip>
